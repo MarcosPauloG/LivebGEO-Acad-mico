@@ -57,8 +57,8 @@ export function ExpansionView() {
 
       <div className="method-grid">
         <article><BarChart3 size={20} /><div><strong>População sintética</strong><p>Índice relativo, sem habitantes ou fonte empresarial.</p></div></article>
-        <article><MapPinned size={20} /><div><strong>Lacuna de cobertura</strong><p>Maior peso quando não há representante atribuído.</p></div></article>
-        <article><ArrowUpRight size={20} /><div><strong>Pontos mapeados</strong><p>Menor saturação aumenta a oportunidade simulada.</p></div></article>
+        <article><MapPinned size={20} /><div><strong>Cobertura ponderada</strong><p>(Municípios cobertos + 0,5 × parciais) ÷ total × 100. Os estados são definidos na amostra fictícia.</p></div></article>
+        <article><ArrowUpRight size={20} /><div><strong>Índice de expansão</strong><p>Pontuação fictícia de 0 a 100, pré-definida para demonstrar a ordenação. Não é calculada por população ou pontos e não decide automaticamente a expansão.</p></div></article>
       </div>
     </div>
   );

@@ -21,6 +21,11 @@ const academicMatrix = new Map<string, MatrixValue>([
   [routeMatrixKey("m02", "m04"), { distanceKm: 60, durationMinutes: 77 }],
   [routeMatrixKey("m03", "m04"), { distanceKm: 42, durationMinutes: 61 }]
 ]);
+// The educational matrix is symmetric; reordering must support both directions.
+for (const [key, value] of [...academicMatrix]) {
+  const [from, to] = key.split(":");
+  academicMatrix.set(routeMatrixKey(to, from), value);
+}
 
 export function RoutesView({ canCompare }: { canCompare: boolean }) {
   const [baselineId, setBaselineId] = useState(routeScenarios[0].id);
@@ -68,6 +73,20 @@ export function RoutesView({ canCompare }: { canCompare: boolean }) {
       ),
       description: "Ordem e métricas recalculadas agora sobre a matriz fictícia local."
     });
+  }
+
+  function moveStop(index: number, direction: number) {
+    if (!canCompare || !generatedRoute) return;
+    const order = [...generatedRoute.municipalityIds];
+    const target = index + direction;
+    if (target < 0 || target >= order.length) return;
+    [order[index], order[target]] = [order[target], order[index]];
+    const totals = sumRouteOrder(order, academicMatrix);
+    if (!totals) return;
+    setGeneratedRoute({ ...generatedRoute, municipalityIds: order, ...totals,
+      recommended: false, name: "Sequência ajustada",
+      costIndex: Math.round(totals.distanceKm / routeScenarios[0].distanceKm * 100),
+      description: "Sequência reorganizada pelo usuário; métricas recalculadas na matriz fictícia." });
   }
 
   return (
@@ -126,7 +145,12 @@ export function RoutesView({ canCompare }: { canCompare: boolean }) {
               </dl>
               <ol className="route-stops">
                 {route.municipalityIds.map((id, stopIndex) => (
-                  <li key={id}><span>{stopIndex + 1}</span>{municipalityById(id)?.name}</li>
+                  <li key={id}><span>{stopIndex + 1}</span>{municipalityById(id)?.name}
+                    {index === 1 && generatedRoute && comparisonFixture.id === "route-suggested" ? <span className="stop-actions">
+                      <button disabled={!canCompare || stopIndex === 0} aria-label={`Subir parada ${stopIndex + 1}`} onClick={() => moveStop(stopIndex, -1)}>↑</button>
+                      <button disabled={!canCompare || stopIndex === route.municipalityIds.length - 1} aria-label={`Descer parada ${stopIndex + 1}`} onClick={() => moveStop(stopIndex, 1)}>↓</button>
+                    </span> : null}
+                  </li>
                 ))}
               </ol>
             </article>
@@ -142,7 +166,7 @@ export function RoutesView({ canCompare }: { canCompare: boolean }) {
 
       <div className="info-callout">
         <Route size={19} />
-        <span>Distâncias, tempos e custos são fictícios. Nenhuma requisição é enviada a Google Maps, geocodificador ou serviço externo.</span>
+        <span>Distâncias, tempos e custos são fictícios. Gere uma sugestão para reorganizar as paradas pelas setas. O índice de custo usa a distância relativa à referência (base 100), sem valores monetários. A heurística não garante a melhor rota global.</span>
       </div>
     </div>
   );

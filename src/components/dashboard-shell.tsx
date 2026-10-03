@@ -83,6 +83,7 @@ export function DashboardShell() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [selectedMunicipalityId, setSelectedMunicipalityId] = useState<string | null>(null);
   const [visits, setVisits] = useState(initialVisits);
+  const [selectedPointId, setSelectedPointId] = useState<string | null>(null);
 
   useEffect(() => {
     const current = readAcademicSession();
@@ -179,6 +180,7 @@ export function DashboardShell() {
                 <button
                   className={view === item.id ? "nav-button nav-button--active" : "nav-button"}
                   onClick={() => navigate(item.id)}
+                  aria-current={view === item.id ? "page" : undefined}
                 >
                   <Icon size={18} />
                   <span>{item.label}</span>
@@ -263,13 +265,14 @@ export function DashboardShell() {
             />
           ) : null}
           {view === "territories" ? <TerritoriesView /> : null}
-          {view === "points" ? <PointsView /> : null}
+          {view === "points" ? <PointsView canWrite={hasPermission(session.role, "visits:write")} onPlanVisit={(id) => { setSelectedPointId(id); navigate("visits"); }} /> : null}
           {view === "representatives" ? <RepresentativesView /> : null}
           {view === "visits" ? (
             <VisitsView
               canWrite={hasPermission(session.role, "visits:write")}
               setVisits={setVisits}
               visits={visits}
+              selectedPointId={selectedPointId}
             />
           ) : null}
           {view === "routes" ? <RoutesView canCompare={hasPermission(session.role, "routes:compare")} /> : null}

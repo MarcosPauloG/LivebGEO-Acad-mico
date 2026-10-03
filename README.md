@@ -2,6 +2,16 @@
 
 Protótipo privado desenvolvido para o Projeto Integrador II-B do curso de ADS da PUC Goiás.
 
+## Entrega acadêmica
+
+- [Relatório em PDF](docs/entrega/relatorio-liveb-geo.pdf)
+- [Relatório editável em Word](docs/entrega/relatorio-liveb-geo.docx)
+- [Roteiro de apresentação e vídeo](docs/ENTREGA.md)
+- [Verificações de interface](docs/equipe/filipe/testes/verificacao.md)
+- [Capturas das telas](docs/equipe/filipe/prototipo/telas)
+
+A entrevista e sua transcrição são de 01/10/2026. As regras dos usuários reais estão especificadas no relatório; os perfis fictícios de demonstração foram preservados. Áudio, vídeo e transcrição integral não são versionados.
+
 Este repositório é exclusivamente acadêmico. Ele não representa o ambiente de produção da Liveb, não contém o Liveb OS completo e não deve receber dados reais, credenciais ou configurações internas da empresa.
 
 ## Escopo

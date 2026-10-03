@@ -13,7 +13,7 @@ import { findDuplicatePointGroups } from "@/lib/metrics";
 import type { PointOfInterest } from "@/lib/types";
 import { Panel, StatusBadge } from "../shared";
 
-export function PointsView() {
+export function PointsView({ onPlanVisit, canWrite }: { onPlanVisit: (id: string) => void; canWrite: boolean }) {
   const [category, setCategory] = useState<"all" | PointOfInterest["category"]>("all");
   const duplicates = findDuplicatePointGroups(pointsOfInterest);
   const duplicateIds = new Set(duplicates.flatMap((group) => group.map((point) => point.id)));
@@ -60,6 +60,7 @@ export function PointsView() {
                 <th>Território</th>
                 <th>Situação</th>
                 <th>Qualidade</th>
+                <th>Ação</th>
               </tr>
             </thead>
             <tbody>
@@ -85,6 +86,7 @@ export function PointsView() {
                         <StatusBadge label="Sem alerta" tone="success" />
                       )}
                     </td>
+                    <td><button className="secondary-button" disabled={!canWrite} onClick={() => onPlanVisit(point.id)}>Planejar visita</button></td>
                   </tr>
                 );
               })}

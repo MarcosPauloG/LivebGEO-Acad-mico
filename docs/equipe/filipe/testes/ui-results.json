@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-03",
+  "viewport": "1440x1000 e 390x844",
+  "results": [
+    {
+      "id": "UI01",
+      "task": "Login fictício e abertura da visão geral",
+      "result": "Aprovado"
+    },
+    {
+      "id": "UI02",
+      "task": "Seleção territorial no mapa",
+      "result": "Aprovado"
+    },
+    {
+      "id": "UI03",
+      "task": "Ponto propagado à visita, prioridade e confirmação visual",
+      "result": "Aprovado"
+    },
+    {
+      "id": "UI04",
+      "task": "Prevenção de visita duplicada",
+      "result": "Aprovado"
+    },
+    {
+      "id": "UI05",
+      "task": "Conclusão de visita no estado local",
+      "result": "Aprovado"
+    },
+    {
+      "id": "UI06",
+      "task": "Geração e reordenação com recálculo de distância",
+      "result": "Aprovado"
+    },
+    {
+      "id": "UI07",
+      "task": "Cobertura, duplicidades e explicação dos indicadores",
+      "result": "Aprovado"
+    },
+    {
+      "id": "UI08",
+      "task": "Perfil de observação sem escrita e sem matriz de acesso",
+      "result": "Aprovado"
+    },
+    {
+      "id": "UI09",
+      "task": "Permissões originais de representação preservadas",
+      "result": "Aprovado"
+    },
+    {
+      "id": "UI10",
+      "task": "Recarregamento restaura fixtures e exige seleção explícita",
+      "result": "Aprovado"
+    },
+    {
+      "id": "UI11",
+      "task": "Navegação móvel a 390 px sem transbordamento horizontal",
+      "result": "Aprovado"
+    },
+    {
+      "id": "UI12",
+      "task": "Nenhum erro JavaScript durante o roteiro",
+      "result": "Aprovado"
+    }
+  ],
+  "errors": []
+}

@@ -93,6 +93,7 @@ export type Visit = {
   scheduledDate: string;
   objective: string;
   status: "planned" | "completed" | "pending";
+  priority?: "normal" | "high";
 };
 
 export type RouteScenario = {

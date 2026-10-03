@@ -423,8 +423,8 @@ export const routeScenarios: RouteScenario[] = [
     name: "Sequência de referência",
     description: "Ordem manual usada como base para a comparação didática.",
     municipalityIds: ["m01", "m03", "m02", "m04"],
-    distanceKm: 146,
-    durationMinutes: 218,
+    distanceKm: 118,
+    durationMinutes: 159,
     costIndex: 100,
     recommended: false
   },
@@ -433,9 +433,9 @@ export const routeScenarios: RouteScenario[] = [
     name: "Sugestão simulada",
     description: "Ordem calculada sobre uma matriz fictícia e determinística.",
     municipalityIds: ["m01", "m02", "m03", "m04"],
-    distanceKm: 119,
-    durationMinutes: 181,
-    costIndex: 82,
+    distanceKm: 80,
+    durationMinutes: 119,
+    costIndex: 68,
     recommended: true
   },
   {
@@ -445,7 +445,7 @@ export const routeScenarios: RouteScenario[] = [
     municipalityIds: ["m01", "m04", "m06", "m13"],
     distanceKm: 164,
     durationMinutes: 244,
-    costIndex: 112,
+    costIndex: 139,
     recommended: false
   }
 ];
