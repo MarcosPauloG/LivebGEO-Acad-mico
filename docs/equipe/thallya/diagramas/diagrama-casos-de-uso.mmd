@@ -1,0 +1,20 @@
+flowchart LR
+  Coord[Coordenacao academica]
+  Analise[Analise territorial]
+  Campo[Representacao de campo]
+  Obs[Observacao]
+  Gestao[Gestao mock local]
+
+  subgraph Sistema[Liveb GEO Academico]
+    UC1([UC-01 Autenticar])
+    UC2([UC-02 Consultar analise territorial])
+    UC3([UC-03 Planejar e concluir visita])
+    UC4([UC-04 Comparar e sugerir rotas])
+    UC5([UC-05 Consultar matriz de acessos])
+  end
+
+  Coord --> UC1 & UC2 & UC3 & UC4 & UC5
+  Analise --> UC1 & UC2 & UC4
+  Campo --> UC1 & UC2 & UC3 & UC4
+  Obs --> UC1 & UC2
+  Gestao --> UC1
