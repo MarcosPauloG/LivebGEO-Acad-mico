@@ -1,11 +1,12 @@
 # Liveb GEO Acadêmico
 
-Protótipo privado desenvolvido para o Projeto Integrador II-B do curso de ADS da PUC Goiás.
+Protótipo acadêmico desenvolvido para o Projeto Integrador II-B do curso de ADS da PUC Goiás.
 
 ## Entrega acadêmica
 
 - [Relatório em PDF](docs/entrega/relatorio-liveb-geo.pdf)
 - [Relatório editável em Word](docs/entrega/relatorio-liveb-geo.docx)
+- [Aprovação da versão corrigida e do vídeo](docs/entrega/aprovacao.md)
 - [Roteiro de apresentação e vídeo](docs/ENTREGA.md)
 - [Verificações de interface](docs/equipe/filipe/testes/verificacao.md)
 - [Capturas das telas](docs/equipe/filipe/prototipo/telas)
@@ -64,6 +65,6 @@ Cada alteração deve ser feita em uma branch própria e enviada por Pull Reques
 
 ## Uso e confidencialidade
 
-Este é um repositório privado, destinado à equipe do projeto, professores e pessoas expressamente autorizadas.
+Este repositório destina-se à apresentação e avaliação acadêmica. A visibilidade é administrada pelo proprietário; a disponibilidade para consulta não concede licença de uso da marca ou do código.
 
 A identidade visual da Liveb é utilizada apenas no contexto acadêmico autorizado. O projeto não é open source, não deve ser redistribuído nem apresentado como produto oficial ou ambiente operacional da empresa.

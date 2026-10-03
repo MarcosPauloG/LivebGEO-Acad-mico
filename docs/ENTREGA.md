@@ -26,7 +26,7 @@ Abra o endereço local informado pelo servidor. Use `aluno@example.invalid` e um
 8. Mostrar a matriz de acessos e trocar para Observação para demonstrar o bloqueio de escrita.
 9. Encerrar com os limites: dados sintéticos, visitas voláteis, rotas locais e ausência de integração corporativa.
 
-O vídeo de apresentação ainda deve ser gravado pela equipe. Não apresentar a entrevista antiga como gravação desta versão nem afirmar que o entrevistado aprovou novamente as alterações.
+O vídeo de apresentação foi montado a partir das gravações dos quatro integrantes, com duração de 4min31s, em MP4 1080p. Em 03/10/2026, Marcos Paulo Guedes Dias confirmou a aprovação do vídeo e da versão corrigida. O registro complementar está em [aprovação](entrega/aprovacao.md). O vídeo é entregue separadamente na plataforma da disciplina e não é versionado neste repositório.
 
 ## Regras de domínio e demonstração
 
